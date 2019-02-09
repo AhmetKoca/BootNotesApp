@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes Home</title>
+</head>
+<body>
+<h1>Notes Home Page</h1>
+
+<div align="center">
+    <h3>
+        Welcome to Notes App
+
+        <h3 th:text="${'Name is: ' + name}">
+            Name
+        </h3>
+
+        <h3 th:text="${'App Name is: ' + appName}">
+            Name
+        </h3>
+
+        <br>
+
+        <h3 th:text="${'Date is: ' + dateNow}">Date is:</h3>
+
+        <form action="display-notes" th:action="@{/display-notes}" method="post">
+            <label for="display">Press to list notes</label>
+            <input id="display" type="submit" name="submit"/>
+        </form>
+
+    </h3>
+</div>
+
+</body>
+</html>
