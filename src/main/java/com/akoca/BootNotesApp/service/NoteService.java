@@ -1,6 +1,6 @@
 package com.akoca.BootNotesApp.service;
 
-import com.akoca.BootNotesApp.model.Note;
+import com.akoca.BootNotesApp.DBPrimary.model.Note;
 
 import java.util.List;
 

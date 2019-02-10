@@ -1,4 +1,4 @@
-package com.akoca.BootNotesApp.model;
+package com.akoca.BootNotesApp.DBPrimary.model;
 
 import lombok.EqualsAndHashCode;
 

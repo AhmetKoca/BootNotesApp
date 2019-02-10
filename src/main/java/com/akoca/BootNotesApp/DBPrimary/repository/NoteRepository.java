@@ -1,6 +1,6 @@
-package com.akoca.BootNotesApp.repository;
+package com.akoca.BootNotesApp.DBPrimary.repository;
 
-import com.akoca.BootNotesApp.model.Note;
+import com.akoca.BootNotesApp.DBPrimary.model.Note;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface NoteRepository extends JpaRepository<Note , Long> {

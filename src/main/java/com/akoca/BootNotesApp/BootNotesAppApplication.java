@@ -8,8 +8,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Slf4j
-@EntityScan("com.akoca.BootNotesApp.model")
-@EnableJpaRepositories("com.akoca.BootNotesApp.repository")
+@EntityScan({"com.akoca.BootNotesApp.DBPrimary.model" ,
+            "com.akoca.BootNotesApp.DBSecurity.model"}
+)
+@EnableJpaRepositories(
+        {"com.akoca.BootNotesApp.DBPrimary.repository" ,
+        "com.akoca.BootNotesApp.DBSecurity.repository"}
+)
+//@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
 @SpringBootApplication
 public class BootNotesAppApplication {
 

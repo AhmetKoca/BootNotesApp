@@ -1,7 +1,7 @@
 package com.akoca.BootNotesApp.controller;
 
 import com.akoca.BootNotesApp.dto.NewNoteDto;
-import com.akoca.BootNotesApp.model.Note;
+import com.akoca.BootNotesApp.DBPrimary.model.Note;
 import com.akoca.BootNotesApp.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

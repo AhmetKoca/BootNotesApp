@@ -1,14 +1,16 @@
 package com.akoca.BootNotesApp.service.impl;
 
 import com.akoca.BootNotesApp.exception.NoteNotFoundException;
-import com.akoca.BootNotesApp.model.Note;
-import com.akoca.BootNotesApp.repository.NoteRepository;
+import com.akoca.BootNotesApp.DBPrimary.model.Note;
+import com.akoca.BootNotesApp.DBPrimary.repository.NoteRepository;
 import com.akoca.BootNotesApp.service.NoteService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class NoteServiceImpl implements NoteService {
 
@@ -31,6 +33,8 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     public Note findByTitle(String title) {
+
+        log.debug("Calling: " , this.getClass().getEnclosingMethod());
         return noteRepository.findByTitle(title);
     }
 
