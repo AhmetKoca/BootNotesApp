@@ -1,6 +1,9 @@
 package com.akoca.BootNotesApp.controller;
 
+import com.akoca.BootNotesApp.DBPrimary.model.Note;
+import com.akoca.BootNotesApp.service.NoteService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +19,13 @@ public class MainController {
     @Value("${spring.application.name}")
     String applicationName;
 
+    private NoteService noteService;
+
+    @Autowired
+    public MainController(NoteService noteService) {
+        this.noteService = noteService;
+    }
+
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("appName" , applicationName);
@@ -30,11 +40,18 @@ public class MainController {
 
     @PostMapping("/display-notes")
     public String displayNotes(Model model) {
-        model.addAttribute("note1" , "sdddddddddddddddddddddddddd");
+
+        int i = 1;
+        for(Note note : noteService.findAll()) {
+            model.addAttribute("note" + i , note);
+            ++i;
+        }
+
+        /*model.addAttribute("note1" , "sdddddddddddddddddddddddddd");
         model.addAttribute("note2" , "sddddddhgghhhhhhhhhhhhhhhhhhdddddddd");
         model.addAttribute("note3" , "sddddlkkkkkkkkkkkkkkkkkkkkdd");
         model.addAttribute("note4" , "sddddaaaaaaaaaaaaaaaaaaaaad");
-        model.addAttribute("note5" , "sddddddppppppppppppppppppppd");
+        model.addAttribute("note5" , "sddddddppppppppppppppppppppd");*/
 
         log.info("calling list");
 
